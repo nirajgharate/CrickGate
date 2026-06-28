@@ -276,7 +276,8 @@ const AIAssistant = () => {
 
     try {
       const userId = getUserId();
-      const response = await fetch("http://localhost:8000/chat", {
+      const baseUrl = import.meta.env.VITE_API_URL || "http://localhost:9005";
+      const response = await fetch(`${baseUrl}/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -329,7 +330,7 @@ const AIAssistant = () => {
       setMessages(prev => [...prev, {
         id: Date.now() + 1,
         sender: 'bot',
-        text: "I'm having trouble connecting to my brain right now. Make sure the backend AI Agent service is running at port 8000!"
+        text: "I'm having trouble connecting to my brain right now. Please make sure the AI Agent backend service is online."
       }]);
     }
   };

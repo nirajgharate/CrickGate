@@ -11,6 +11,7 @@ import tournamentRoutes from "./routes/tournamentRoutes.js";
 import reviewRoutes from "./routes/reviewRoutes.js";
 import turfRoutes from "./routes/turfRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
+import chatRoutes from "./routes/chatRoutes.js";
 
 const app = express();
 
@@ -40,6 +41,7 @@ app.use("/tournament", tournamentRoutes);
 app.use("/review", reviewRoutes);
 app.use("/turf", turfRoutes);
 app.use("/upload", uploadRoutes);
+app.use("/chat", chatRoutes);
 
 app.use((err, req, res, next) => {
   return res.status(err.status || 500).json({
