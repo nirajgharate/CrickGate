@@ -276,7 +276,7 @@ const AIAssistant = () => {
 
     try {
       const userId = getUserId();
-      const baseUrl = import.meta.env.VITE_API_URL || "http://localhost:9005";
+      const baseUrl = import.meta.env.VITE_API_URL || "https://crickgate.onrender.com";
       const response = await fetch(`${baseUrl}/chat`, {
         method: "POST",
         headers: {
